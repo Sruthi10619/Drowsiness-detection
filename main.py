@@ -3,6 +3,7 @@ import os
 from keras.models import load_model
 import numpy as np
 from pygame import mixer
+from demo import sru
 import time
 
 mixer.init()
@@ -86,8 +87,9 @@ while(True):
         #person is feeling sleepy so we beep the alarm
         cv2.imwrite(os.path.join(path,'image.jpg'),frame)
         try:
-            sound.play()
-
+            sound.play() 
+            sru('x')      
+ 
         except: # isplaying = False
             pass
         if(thicc<16):
